@@ -1,0 +1,23 @@
+<template>
+  <lightning-card
+    icon-name="standard:account"
+    variant="base"
+    title="Supervisor"
+  >
+    <div class="slds-var-m-around_medium">
+      <template if:true={bear.data}>
+        <lightning-record-form
+          layout-type="Compact"
+          object-api-name="Contact"
+          record-id={supervisorId}
+        ></lightning-record-form>
+      </template>
+
+      <template if:true={bear.error}>
+        <div class="slds-text-color_error">
+          An error occurred while loading the bear record
+        </div>
+      </template>
+    </div>
+  </lightning-card>
+</template>
